@@ -1,5 +1,5 @@
 """
-QuikApp Integration Service
+QuckApp Integration Service
 
 Manages third-party integrations with Jira, GitHub, Google Drive, and more.
 """
@@ -26,7 +26,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="QuikApp Integration Service",
+    title="QuckApp Integration Service",
     description="Third-party Integrations API",
     version="1.0.0",
     docs_url="/docs",

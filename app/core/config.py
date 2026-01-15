@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     BASE_URL: str = "http://localhost:5016"
 
     # Database
-    DATABASE_URL: str = "mysql+asyncmy://quikapp:quikapp@localhost:3306/quikapp_integrations"
+    DATABASE_URL: str = "mysql+asyncmy://quckapp:quckapp@localhost:3306/quckapp_integrations"
 
     # Redis
     REDIS_HOST: str = "localhost"

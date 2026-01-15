@@ -5,12 +5,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: quikapp-integration-service
+    container_name: quckapp-integration-service
     ports:
       - "5016:5016"
     environment:
       - PORT=5016
-      - DATABASE_URL=mysql+asyncmy://quikapp:quikapp@mysql:3306/quikapp_integrations
+      - DATABASE_URL=mysql+asyncmy://quckapp:quckapp@mysql:3306/quckapp_integrations
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - ENCRYPTION_KEY=${ENCRYPTION_KEY:-your-32-byte-encryption-key-here!}
@@ -24,34 +24,34 @@ services:
       - mysql
       - redis
     networks:
-      - quikapp-network
+      - quckapp-network
     restart: unless-stopped
 
   mysql:
     image: mysql:8.0
-    container_name: quikapp-integration-mysql
+    container_name: quckapp-integration-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=quikapp_integrations
-      - MYSQL_USER=quikapp
-      - MYSQL_PASSWORD=quikapp
+      - MYSQL_DATABASE=quckapp_integrations
+      - MYSQL_USER=quckapp
+      - MYSQL_PASSWORD=quckapp
     ports:
       - "3318:3306"
     volumes:
       - integration-mysql-data:/var/lib/mysql
     networks:
-      - quikapp-network
+      - quckapp-network
 
   redis:
     image: redis:7-alpine
-    container_name: quikapp-integration-redis
+    container_name: quckapp-integration-redis
     ports:
       - "6390:6379"
     networks:
-      - quikapp-network
+      - quckapp-network
 
 networks:
-  quikapp-network:
+  quckapp-network:
     driver: bridge
 
 volumes:
