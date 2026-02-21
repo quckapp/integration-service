@@ -28,9 +28,6 @@ google-api-python-client==2.111.0
 google-auth==2.25.2
 google-auth-oauthlib==1.2.0
 
-# Webhooks
-hmac==20230904
-
 # Background Tasks
 celery==5.3.6
 
