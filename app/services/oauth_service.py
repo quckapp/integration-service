@@ -94,7 +94,7 @@ class OAuthService:
             "access_type": "offline",
             "prompt": "consent",
         }
-        return f"https://accounts.google.com/o/oauth2/v2/auth?{urlencode(params)}"
+        return f"https://accounts.google.com/o/oauth2/v1/auth?{urlencode(params)}"
 
     async def exchange_code(
         self,
@@ -222,7 +222,7 @@ class OAuthService:
 
             # Get user info
             user_response = await client.get(
-                "https://www.googleapis.com/oauth2/v2/userinfo",
+                "https://www.googleapis.com/oauth2/v1/userinfo",
                 headers={"Authorization": f"Bearer {access_token}"},
             )
             user_data = user_response.json()
