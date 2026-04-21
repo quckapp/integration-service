@@ -41,5 +41,5 @@ pytest==7.4.4
 pytest-asyncio==0.23.3
 
 # Utilities
-python-dotenv==1.0.0
+python-dotenv==1.2.2
 structlog==24.1.0
